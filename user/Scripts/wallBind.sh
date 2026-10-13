@@ -1,6 +1,6 @@
 #!/bin/bash
 # Bound to Ctrl + Shift + w
-# Lets tou select a folder in the ~/Backgrounds/ folder
+# Lets you select a folder in the ~/Backgrounds/ folder
 
 SCRIPT_PATH="$HOME/Scripts/wallLoop.sh"
 SCRIPT_PATH_2="$HOME/Scripts/generateColors.sh"
