@@ -9,7 +9,7 @@ SCRIPT_PATH_2="$HOME/Scripts/generateColors.sh"
 declare -A THEMES
 THEMES=(
   ["F"]="Yoshiryuu"
-  ["E"]="Hideyoshi Ruwwe"
+  ["E"]="Sei Umehara"
   ["D"]="Rotarran"
   ["C"]="Machiyoh"
   ["B"]="YuCong Tang"

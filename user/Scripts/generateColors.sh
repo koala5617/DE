@@ -4,7 +4,7 @@
 
 declare -A THEMES=(
   ["F"]="#22ebd0"
-  ["E"]="#e6e4cb"
+  ["E"]="#ff0000"
   ["D"]="#f79b42"
   ["C"]="#91edeb"
   ["B"]="#68d317"
@@ -25,5 +25,7 @@ dmenu.selbgcolor: $accent
 
 Xcursor.size: 24
 EOF
+
+sed -i "s/^foreground = .*/foreground = '$accent'/" "$HOME/.config/cava/config"
 
 xrdb -merge ~/.xresources
