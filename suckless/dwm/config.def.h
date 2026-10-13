@@ -168,8 +168,20 @@ static const Key keys[] = {
 	{ ControlMask|ShiftMask,  XK_k,   spawn, SHCMD("bash ~/Scripts/setPlaylist.sh") },
 	{ ControlMask|ShiftMask,  XK_m,   spawn, SHCMD("bash ~/Scripts/setSong.sh") },
 	{ ControlMask|ShiftMask,  XK_s,   spawn, SHCMD("bash ~/Scripts/powerBind.sh") },
+	{ ControlMask|ShiftMask,  XK_space,   spawn, SHCMD("bash ~/Scripts/scriptsBind.sh") },
 	{ ControlMask|ShiftMask,  XK_F2,  spawn, SHCMD("bash ~/Scripts/record.sh") },
 	{ ControlMask|ShiftMask,  XK_n,   spawn, SHCMD("xclip -selection clipboard -o | xvkbd -xsendevent -file -") },
+
+  // numpad in u-.
+  { Mod5Mask, XK_u,        spawn, SHCMD("xdotool sleep 0.2 key KP_7") },
+	{ Mod5Mask, XK_i,        spawn, SHCMD("xdotool sleep 0.2 key KP_8") },
+	{ Mod5Mask, XK_o,        spawn, SHCMD("xdotool sleep 0.2 key KP_9") },
+	{ Mod5Mask, XK_j,        spawn, SHCMD("xdotool sleep 0.2 key KP_4") },
+	{ Mod5Mask, XK_k,        spawn, SHCMD("xdotool sleep 0.2 key KP_5") },
+	{ Mod5Mask, XK_l,        spawn, SHCMD("xdotool sleep 0.2 key KP_6") },
+	{ Mod5Mask, XK_m,        spawn, SHCMD("xdotool sleep 0.2 key KP_1") },
+	{ Mod5Mask, XK_comma,    spawn, SHCMD("xdotool sleep 0.2 key KP_2") },
+	{ Mod5Mask, XK_period,   spawn, SHCMD("xdotool sleep 0.2 key KP_3") },
 };
 
 /* button definitions */
