@@ -1,8 +1,6 @@
 #!/bin/bash
 
-packages()
-{
-  if [ $(( 10#$(date '+%M') % 3 )) -eq 0 ] && [ $(( 10#$(date '+%S') )) -eq 5 ]; then
+fetch_packages() {
     if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
         updates_arch=0
     fi
@@ -13,19 +11,27 @@ packages()
 
     updates=$(("$updates_arch" + "$updates_aur"))
 
-    if [ ! -e /tmp/dwmbar_packages ]; then
-      touch /tmp/dwmbar_packages
-    fi
-
     echo "$updates" > /tmp/dwmbar_packages  
+}
+
+packages()
+{
+  if [ ! -e /tmp/dwmbar_packages ]; then
+    touch /tmp/dwmbar_packages
   fi
 
-  if [ -s /tmp/dwmbar_packages ]; then
-    if [ "$(cat /tmp/dwmbar_packages)" -ne 0 ]; then
-      echo "󰣇 $(cat /tmp/dwmbar_packages) | "
-    else
-      echo ""
-    fi
+  if [ $(( 10#$(date '+%M') % 3 )) -eq 0 ] &&
+    [ $(( 10#$(date '+%S') )) -eq 5 ] &&
+    [ "$(cat /tmp/dwmbar_packages)" != "fetching..." ]; then
+
+    echo "fetching..." > /tmp/dwmbar_packages
+    fetch_packages &
+  fi
+
+  value=$(cat /tmp/dwmbar_packages)
+
+  if [ -n "$value" ] && [ "$value" != "0" ]; then
+    echo "󰣇 $(cat /tmp/dwmbar_packages) | "
   else
     echo ""
   fi
@@ -112,6 +118,7 @@ main()
 # }
 
 
+fetch_packages &
 update() {
   dwm -s "$(mpd)$(packages)$(get_date)$(main)"
 }

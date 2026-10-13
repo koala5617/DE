@@ -1,11 +1,12 @@
 # My Desktop 
-![](images/screenshot-02-25.png)
+![](images/screenshot-10-26.png)
 `user` folder is equivalent to ~  
 
 Basic stuff:
 
 - Window manager: Dwm
 - - The bar is out of the way, it shows up when mod is pressed
+- - Enabling Capslock disables dwm's hotkey, meaning you can use the alt key in app shortcuts
 - Terminal: St
 - App launcher: dmenu
 - Compositor: picom
@@ -19,17 +20,22 @@ some things also assume that you have
 
 - mpd  
 - xvkbd  
+- xdotool
 
 ## Keybinds
 
 Default dwm keybinds  
   
-other binds:  
+All binds are made via dwm. It is a good idea to look through them since my keyboard is wonky.  
+Since I do not have a numpad, there are AltGr (mod5) keybinds for those keys using xdotool.  
+  
+Common binds:  
 Ctrl + Shift + t = St  
+Ctrl + Shift + n = Paste using xvkbd  
+Ctrl + Shift + space = Open menu menu (which constains all below)  
 Ctrl + Shift + return = Dmenu (specifically dmenu_run)  
 Ctrl + Shift + s = Power settings  
 Ctrl + Shift + w = Wallpaper theme selector  
-Ctrl + Shift + n = Paste using xvkbd  
 Ctrl + Shift + m = set song menu  
 Ctrl + Shift + k = set playlist menu  
 Ctrl + Shift + F2 = screen recoding menu  

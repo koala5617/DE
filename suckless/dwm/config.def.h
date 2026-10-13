@@ -182,6 +182,8 @@ static const Key keys[] = {
 	{ Mod5Mask, XK_m,        spawn, SHCMD("xdotool sleep 0.2 key KP_1") },
 	{ Mod5Mask, XK_comma,    spawn, SHCMD("xdotool sleep 0.2 key KP_2") },
 	{ Mod5Mask, XK_period,   spawn, SHCMD("xdotool sleep 0.2 key KP_3") },
+	{ Mod5Mask, XK_equal,   spawn, SHCMD("xdotool sleep 0.2 key KP_Add") },
+	{ Mod5Mask, XK_minus,   spawn, SHCMD("xdotool sleep 0.2 key KP_Subtract") },
 };
 
 /* button definitions */
